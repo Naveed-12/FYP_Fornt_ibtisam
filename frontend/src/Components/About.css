@@ -1,0 +1,36 @@
+
+@media screen and (max-width: 991px) {
+    .pt-about {
+        margin: 0 auto !important;
+
+    }
+}
+.pt-about>p{
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.pt-about>h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.pt-img-1 {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.pt-img-2 {
+    position: absolute;
+    top: 19%;
+    left: 55%;
+    z-index: 1;
+
+}
+.pt-img-3 {
+    position: absolute;
+    top: 26%;
+    left: 24%;
+    z-index: 1;
+}
