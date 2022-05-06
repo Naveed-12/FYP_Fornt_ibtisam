@@ -7,7 +7,7 @@ function Call() {
     return (
         <div className='call_container'>
             <p className='call_container_price' style={{fontFamily:'Verdana, Geneva, Tahoma, sans-serif'}}>PKR 2.8 Crore</p>
-            <div className='call_btn'><img src={call} /><span>Account</span></div>
+            <div className='call_btn'><img src={call} /><span style={{cursor:'pointer'}}>Account</span></div>
             <form>
                 <div className='form_name'>
                     <label>Name</label><br />
@@ -19,10 +19,10 @@ function Call() {
                 </div>
                 <div className='form_text'>
                     <label>Message</label><br />
-                    <textarea rows="4" cols="40"id='input3' />
+                    <textarea rows="4" cols="35"id='input3' />
                 </div>
                 <p className='option_para' style={{fontFamily:'Verdana, Geneva, Tahoma, sans-serif'}}>I am a:</p>
-                <div className='form_option'>
+                <div className='form_option' style={{marginTop:'10px'}}>
                     <div className='option'><label for="vehicle1">Buyer</label>
                         <input type="checkbox" /></div>
                     <div className='option'><label for="vehicle1">Agent</label>

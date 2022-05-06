@@ -341,17 +341,18 @@ function Map() {
                         .setHTML(
                             `
                             <img src=${properties.image} width="300" height="180" style="margin:auto;border-radius:10px;">
-                            <div style="background:black;position:absolute;width:300px;height:40px;top:150px;opacity:0.4;"></div>
-                            <div style="display:flex;justify-content:space-between;position:absolute;top:155px" >
+                            <div style="background:black;position:absolute;width:300px;height:40px;top:169px;opacity:0.4;"></div>
+                            <div style="display:flex;justify-content:space-between;position:absolute;top:169px" >
                                 <P style="color:white;font-size:14px; margin-left:5px;font-weight:700;margin-top:3px">${properties.Price}</P>
                                 <p style="font-size:14px;margin-left:130px;color:white;margin-top:3px">${properties.land_size}</p>
                             </div>
-                           <div style="margin-top:15px;padding:5px">
-                                <div style="margin-bottom:10px"><img src=${properties.icon} width="20" height="20" style="object-fit:contain;margin-top:-5px"><span style="margin-left:5px;font-weight:700;font-size:19px;">Address</span><span style="margin-left:15px;font-size:13px;color:gray;
+                           <div style="margin-top:15px;padding:5px;">
+                                <div style="margin-bottom:10px;display:flex"><img src=${properties.icon} width="20" height="20" style="object-fit:contain;margin-top:-5px"><span style="margin-left:5px;font-weight:700;font-size:19px;">Address</span><span style="margin-left:15px;font-size:13px;color:gray;
                                  ">${properties.Address} </span></div>
-                                 <img src=${properties.icon1} width="20" height="20" style="object-fit:contain;margin-top:-5px"><span style="margin-left:7px;font-weight:700;font-size:19px">Area</span><span style="margin-left:40px;font-size:13px;color:gray">${properties.Area}</span>
+                                 <div style="display:flex"><img src=${properties.icon1} width="20" height="20" style="object-fit:contain;margin-top:-5px"><span style="margin-left:7px;font-weight:700;font-size:19px">Area</span><span style="margin-left:40px;font-size:13px;color:gray">${properties.Area}</span></div>
+                                 </div>
+                           <div style="padding:15px;"><a href='/mapdata?House_id=${properties.House_Number}' target=_blank  style="float:right;cursor:pointer;color:blue;font-size:15px;margin-right:5px; text-decoration:none;outline:none">See more</a></div>
                            </div>
-                           <div><a href='/mapdata?House_id=${properties.House_Number}' target=_blank  style="float:right;cursor:pointer;color:blue;font-size:15px;margin-right:5px; text-decoration:none;outline:none">See more</a></div>
                             `
                         )
                        

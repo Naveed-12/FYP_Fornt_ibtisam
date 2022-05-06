@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function Areas({ img1, title1, img2, title2, img3, title3, location }) {
     return (
         <div className='areas'>
-            <h1 className='lahore'>{location}</h1>
+            <h1 className='lahore'style={{fontSize:'25px'}}>{location}</h1>
             <div className='small_img_container'>
 
                 <div className='small_img_container1'><Link to={`/area_detail?title1=${title1}`}><img src={img1} className='small_img' style={{borderRadius:'3px'}}/><h2>{title1}</h2></Link></div>

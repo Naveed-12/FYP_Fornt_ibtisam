@@ -2,14 +2,13 @@ import React, { Component, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../Style/Home.css";
 
-// import pic1 from "../images/homeback.jpg";
-// import pic2 from "../images/dha-karachi.jpg";
-// import pic3 from "../images/imag2.jpg";
-// import pic4 from "../images/imag3.jpg";
-
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import Homebanner1 from "./Homebanner1";
+import Homebanner2 from "./Homebanner2";
+import Homebanner3 from "./Homebanner3";
+import Footer1 from "./Footer1";
 function Home() {
   const [City, Setcity] = useState();
   const [Sector, Setsector] = useState();
@@ -18,170 +17,107 @@ function Home() {
   const [Price, Setprice] = useState();
   return (
     <React.Fragment>
-      <div className="flex">
-        <div className="container-fuild body">
-          <div className="container-fluid secondCon">
-            <Navbar />
-            {/* <h1 className="Title2">
-                Property Ticket
-                <p className="para">Invest in the Future you believe in</p>
-              </h1>
-              <ul className="ul">
-                <Link className="Link" to="/home">
-                  <li className="li">Home</li>
-                </Link>
-                <Link className="Link" to="/areaguides">
-                  <li className="li">Area Guide</li>
-                </Link>
-                <Link className="Link" to="/aboutus">
-                  <li className="li">About us</li>
-                </Link>
-                <Link className="Link" to="/Map">
-                  <li className="li">Map</li>
-                </Link>
-                <Link className="Link" to="/signin">
-                  <li className="li">Log out</li>
-                </Link>
-              </ul> */}
-            <div className="para2">
-              Built And Diversify Your Real Estate Property. Meet Property
-              Ticket,a Secure Simple Real Estate Management Platform
-            </div>
-            <div className="container">
-              <div className="row">
-                <div className="col-md-3">
-                  <div className="box">
-                    find Your Dream Home
-                    <p className="boxpara">
-                      We Provide Various Types Of Houses From Cheapest to
-                      Premium
-                    </p>
-                  </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="box">
-                    <i className="bi bi-shield-fill white"></i>Our Best Home
-                    Guarantee
-                    <p className="boxpara">
-                      If You buy A House You Will Get Special Guarantee
-                    </p>
-                  </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="box">
-                    <i className="bi bi-lock-fill white"></i>100% Safe
-                    <p className="boxpara">
-                      Your Transaction Will Always be kept Confidential and
-                      safe using the technology of blockchain
-                    </p>
-                  </div>
-                </div>
-                <div className="col-md-3  ">
-                  <div className="box">
-                    <i className="bi bi-heart-fill white"></i>Facilities
-                    <p className="boxpara">
-                      Buy Your House Without Any Kind of Difficulty
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="container">
-              <div className="row form">
-                <h4 className="searching">What do you searching for?</h4>
-                <select className="input" onChange={e => Setcity(e.target.value)}>
-                  <option value='' disabled selected>Select City</option>
-                  <option value="Lahore">Lahore</option>
-                  <option value="Karachi">Karachi</option>
-                  <option value="Islamabad">Islamabad</option>
-                  {/* <option value="2">Rent</option> */}
-                </select>
-                <input type='text' disabled placeholder='Bahria Town' className="input" />
-                <select className="input" onChange={e => Setsector(e.target.value)}>
-                  <option value='' disabled selected>Select Sector</option>
-                  <option value="A">A</option>
-                  <option value="B">B</option>
-                  <option value="C">C</option>
-                </select>
-                <select className="input" onChange={e => Settype(e.target.value)}>
-                  <option value='' disabled selected>Select Type</option>
-                  <option value="House">House</option>
-                  <option value="Commercial">Commercial</option>
-                  <option value="Plot">Plot</option>
-                </select>
-                <select className="input" onChange={e => Setsize(e.target.value)}>
-                  <option value='' disabled selected>Select Size</option>
-                  <option value="5 ">5 marla</option>
-                  <option value="10">10 marla</option>
-                  <option value="15">15 marla</option>
-                  <option value="1">1 kanal</option>
-                  <option value="1.5">1.5 kanal</option>
-                </select>
-                <select className='input' onChange={e => Setprice(e.target.value)}>
-                  <option value='' disabled selected>Select Price</option>
-                  <option value='1,00,00,000'>1,00,00,000</option>
-                  <option value='2,00,00,000'>2,00,00,000</option>
-                  <option value='3,00,00,000'>3,00,00,000</option>
-                  <option value='4,00,00,000'>4,00,00,000</option>
-                  <option value='5,00,00,000'>5,00,00,000</option>
-                  <option value='6,00,00,000'>6,00,00,000</option>
-                  <option value='7,00,00,000'>7,00,00,000</option>
-                  <option value='8,00,00,000'>8,00,00,000</option>
-                  <option value='9,00,00,000'>9,00,00,000</option>
-                  <option value='10,00,00,000'>10,00,00,000</option>
-                  {/* <option value='1,00,00,000'>1,00,00,000</option> */}
-                </select>
-                <a className="Findbtn" href={`/searchdata?city=${City}&sector=${Sector}&type=${Type}&size=${Size}&price=${Price}`}>Find</a>
-                {/* <button className="Findbtn"><a target={'_blank'} href={`/searchdata?area=${area}&location=${location}&size=${size}&type=${type}&price=${price}`}>Find</a></button> */}
-              </div>
-            </div>
-            <div className="container paras">
-              <h4 className="para3">What we are ?</h4>
-              <br />
-              <p className="para4">
-                Our vision is provide the client the secure platform to
-              </p>
-              <br />
-              <p className="para4">
-                buy or rent property and smooth online transaction using the
-              </p>
-              <br />
-              <p className="para4">
-                rising technology of <span>Block Chain.</span>
-              </p>
-              <br />
-            </div>
-            <div className="container paras2">
-              <h4 className="para3">What do we offer?</h4>
-              <br />
-              <p className="para4">
-                We offer variety of commercial, residential, industrial plots
-              </p>
-              <br />
-              <p className="para4">
-                houses and projects to our client within the capacity of
-              </p>
-              <br />
-              <p className="para4">affordability and accessibility.</p>
-              <br />
-            </div>
-            <br />
-            <div className="container2 paras2">
-              <h2 className="para5  ">Have Any Query?</h2>
-              <input type="text" className="input2" placeholder="FirstName" />
-              <input type="text" className="input2" placeholder="LastName" />
-              <input type="email" className="input2" placeholder="Email" />
-              <input
-                type="email"
-                className="input3"
-                placeholder="Your Question..."
-              />
-            </div>
-            <Footer />
-          </div>
+      <Navbar />
+      <div className="home-container flex" style={{ background: "#9DB4FB" }}>
+        <div
+          className="home-title bg-white"
+          style={{ paddingTop: "8%", paddingLeft: "5%", width: "50%" }}
+        >
+          <h1 className="font-semibold" style={{ fontSize: "60px" }}>
+            <p className="font-semibold">Diving</p>
+            <p className="font-semibold"> into the future </p>of digital{" "}
+            <p className="font-semibold">Real Estate.</p>
+          </h1>
+          <p className="text-2xl font-semibold mt-5">
+            <p className="font-semibold">Search confidently</p> with your
+            trusted source for<p className="font-semibold"> sale and rent.</p>
+          </p>
+        </div>
+        <div style={{ paddingTop: "8%" }}>
+          <img
+            className="absolute right-0"
+            style={{ minHeight: "93vh" }}
+            src="https://images.unsplash.com/photo-1460317442991-0ec209397118?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+          />
         </div>
       </div>
+      <div
+        className="mt-32"
+        style={{ width: "45%", minHeight: "135px", background: "#9DB4FB" }}
+      ></div>
+
+      <div className="home_search_container flex flex-col items-center justify-center">
+        <h1 style={{fontFamily:'Inter, sans-serif',fontSize:'40px',color:'#d8f1a0'}} className='font-semibold'>Search Your Future Property</h1>
+        <form className="homeSearch_form w-3/5 mx-auto  mt-12  flex flex-col justify-center items-center space-y-3">
+          <div className="flex justify-around w-full">
+            <select className="w-2/5 rounded h-10 p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer">
+              <option disabled selected>
+                Select Type
+              </option>
+              <option>Commercial</option>
+              <option>House</option>
+              <option>Plot</option>
+            </select>
+            <select className="w-2/5 h-10 rounded p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer">
+              <option disabled selected>
+                Select City
+              </option>
+              <option>Lahore</option>
+              <option>Islamabad</option>
+              <option>Karachi</option>
+            </select>
+          </div>
+
+          <div className="flex justify-around w-full">
+            <select className="w-2/5 h-10 rounded p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer">
+              <option value="" disabled selected>
+                Select Size
+              </option>
+              <option value="5 ">5 marla</option>
+              <option value="10">10 marla</option>
+              <option value="15">15 marla</option>
+              <option value="1">1 kanal</option>
+              <option value="1.5">1.5 kanal</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Bahria Town"
+              className="w-2/5 rounded p-1 focus:border-2 h-10 focus:border-slate-500 hover:cursor-pointer"
+            />
+          </div>
+          <select className="select_price rounded p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer h-10">
+            <option value="" disabled selected>
+              Select Price
+            </option>
+            <option value="1,00,00,000">1,00,00,000</option>
+            <option value="2,00,00,000">2,00,00,000</option>
+            <option value="3,00,00,000">3,00,00,000</option>
+            <option value="4,00,00,000">4,00,00,000</option>
+            <option value="5,00,00,000">5,00,00,000</option>
+            <option value="6,00,00,000">6,00,00,000</option>
+            <option value="7,00,00,000">7,00,00,000</option>
+            <option value="8,00,00,000">8,00,00,000</option>
+            <option value="9,00,00,000">9,00,00,000</option>
+            <option value="10,00,00,000">10,00,00,000</option>
+          </select>
+          <button className="border-2 home_search_button font-semibold border-slate-400 w-1/3 hover:border-[#D8F1A0] duration-300">
+            {" "}
+            <a
+              className="Findbtn"
+              href={`/searchdata?city=${City}&sector=${Sector}&type=${Type}&size=${Size}&price=${Price}`}
+              style={{fontFamily:'Inter, sans-serif'}}
+            >
+              Search
+            </a>
+          </button>
+        </form>
+      </div>
+      <Homebanner1/>
+      <Homebanner2/>
+      <Homebanner3/>
+      <Footer1 />
+      {/* <Footer /> */}
     </React.Fragment>
-  )
+  );
 }
-export default Home
+export default Home;

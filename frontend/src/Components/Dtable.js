@@ -84,7 +84,7 @@ function Dtable() {
         })
     }, [])
     return (
-        <div className="dashboard__table">
+        <div className="dashboard__table" >
 
             <h1 className="users">Users</h1>
             <TableContainer component={Paper}>

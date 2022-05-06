@@ -8,6 +8,7 @@ import "./firebase/firebase";
 import Home from "./Components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Map from "./Components/Map";
+import logo from './images/Subtract.png';
 import Area_guide from "./Components/Area_guide";
 import MapData from "./Components/MapData";
 import Area_details from "./Components/Area_details";
@@ -16,6 +17,7 @@ import Navbar from "./Components/Navbar";
 import AboutUs from "./Components/AboutUs";
 import Footer from "./Components/Footer";
 import Modal from "./Components/Modal";
+import Logo from "./Components/Logo";
 function App() {
   return (
     <div className="App">

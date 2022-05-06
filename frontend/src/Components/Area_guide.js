@@ -50,7 +50,7 @@ function Area_guide() {
           ))}
         </Fade>
       </div>
-      <h1 className='explore_heading'>Explore Pakistan</h1>
+      <h1 className='explore_heading'style={{fontSize:'30px'}}>Explore Pakistan</h1>
             <Areas img1={imag1}  title1='DHA Defense Lahore' img2={imag2} title2='Bahria Town Lahore' img3={imag3}  title3='Al Jalil Garden' location='lahore'/>
             <Areas img1={DHAkarachi}  title1='DHA Defense Karachi' img2={bahriaKarachi} title2='Bahria Town Karachi' img3={DHAcity}  title3='Gulshan-e-Iqbal Town Karachi' location='karachi'/>
             <Areas img1={eighteen}  title1='Bahria Town Islamabad' img2={smartcity} title2='Gulberg Greens Islamabad' img3={DHAislamabad}  title3='DHA Defence Islamabad' location='islamabad'/>

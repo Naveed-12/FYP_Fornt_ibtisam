@@ -17,7 +17,7 @@
 }
 .house_header_container>p{
     color: rgba(0, 0, 0, 0.5);
-    margin-top: -10px;
+    /* margin-top: -10px; */
 }
 .house_header_container>h2,house_header_container>p{
     margin-left: 40px;

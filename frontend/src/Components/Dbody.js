@@ -27,8 +27,8 @@ function Dbody() {
         getPending();
     },[])
     return (
-        <div className="dashboard__body_container" style={{background:'#ffc55b'}}>
-        <div className="dashboard__body"  style={{background:'#44d644 none repeat scroll 0% 0%'}}>
+        <div className="dashboard__body_container" style={{background:'#00a878'}}>
+        <div className="dashboard__body"  style={{background:'#d8f1a0 none repeat scroll 0% 0%'}}>
             <h1 className="dashboard__title">Dashboard</h1>
             <h1 className="dashboard__user"><PersonIcon fontSize="30px"/>Users ( {count} )</h1>
             <h1 className="dashboard__user"><PersonIcon fontSize="30px"/>Pending Users ( {Pcount} )</h1>

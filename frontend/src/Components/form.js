@@ -145,7 +145,7 @@ function SignInform() {
                 </div>
                 <label className="btn1-label">
                   Already have one ?{" "}
-                  <span className="btn1-span" onClick={() => history.push("/")}>
+                  <span className="btn1-span" onClick={() => history.push("/signin")}>
                     Sign in
                   </span>
                 </label>
@@ -191,7 +191,7 @@ function SignInform() {
                 </div>
                 <label className="btn1-label">
                   Already have one ?{" "}
-                  <span className="btn1-span" onClick={() => history.push("/")}>
+                  <span className="btn1-span" onClick={() => history.push("/signin")}>
                     Sign in
                   </span>
                 </label>
@@ -218,7 +218,7 @@ function SignInform() {
                 </div>
                 <label className="btn1-label">
                   Already have one ?{" "}
-                  <span className="btn1-span" onClick={() => history.push("/")}>
+                  <span className="btn1-span" onClick={() => history.push("/signin")}>
                     Sign in
                   </span>
                 </label>

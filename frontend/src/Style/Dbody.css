@@ -13,6 +13,8 @@
     padding: 15px 0;
     font-family: 'Catamaran', sans-serif;
     font-size: large;
+    color: #00a878;
+    font-weight: 600;
 }
 .dashboard__body{
     border: 1px solid  lightgray;
@@ -35,6 +37,8 @@
     border: 1px solid  lightgray;
     font-family: 'Catamaran', sans-serif;
     font-size: large;
+    color: #00a878;
+    font-weight: 500;
 }
 .bold{
     font-size: 20px;
@@ -44,4 +48,5 @@
     font-size: 40px;
     font-style: oblique;
     font-weight: 600;
+
 }
