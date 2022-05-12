@@ -34,3 +34,7 @@
     left: 24%;
     z-index: 1;
 }
+.btnhover:hover{
+    background-color: rgb(231, 231, 76);
+    color:white;
+}

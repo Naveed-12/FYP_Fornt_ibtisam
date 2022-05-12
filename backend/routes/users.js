@@ -2,6 +2,7 @@ const routes = require("express").Router();
 const User = require("../modules/userSchema");
 const bycrypt = require('bcryptjs');
 const Admin = require("../modules/adminSchema");
+const Properties = require("../modules/PropertySearchSchema")
 
 routes.get('/userdatacount' , (req,res)=>{  
     const getCount = async() => {
@@ -134,4 +135,10 @@ routes.put('/approve',async (req,res)=>{
   const result = await User.updateOne({_id:_id},{Status:false} );
   res.send(result);
 })
+
+routes.get('/getproperties', async (req,res)=>{
+  const Property = await Properties.find();
+  res.json(Property);
+});
+
 module.exports = routes;

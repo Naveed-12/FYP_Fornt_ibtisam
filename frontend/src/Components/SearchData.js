@@ -6,13 +6,18 @@ import SearchDataContent from "./SearchDataContent";
 import arrow from "../images/arrow-down.png";
 import arrow1 from "../images/up-arrow.png";
 import Footer from "./Footer";
+import axios from "axios";
 // import Header from './Header';
-function SearchData() {
+function SearchData(props) {
   const [City, Setcity] = useState();
   const [Sector, Setsector] = useState();
   const [Type, Settype] = useState();
   const [Size, Setsize] = useState();
   const [Price, Setprice] = useState();
+
+  const [Properties, Setproperties] = useState([]);
+
+
 
   const { search } = useLocation();
   const parms = new URLSearchParams(search);
@@ -45,6 +50,18 @@ function SearchData() {
     document.getElementById("arrow").style.justifyContent = "center";
     document.getElementById("arrow").style.alignItems = "center";
   };
+  useEffect(() => {
+    
+    const getProperties = async()=>{
+      const data = axios.get("http://localhost:5000/api/property/getproperties", {
+      }).then(res =>{
+        Setproperties(res.data)
+        console.log("Properties are state :  ", Properties);
+    })
+  }
+  getProperties()
+  }, [])
+  
 
   return (
     <div className="SeachData_main">
@@ -64,7 +81,7 @@ function SearchData() {
           <div>
             <select
               className="select_city"
-              onChange={(e) => Setcity(e.target.value)}
+              onChange={(e) => props.Setcity(e.target.value)}
             >
               <option value="" disabled selected>
                 Select City
@@ -74,22 +91,12 @@ function SearchData() {
               <option value="Islamabad">Islamabad</option>
             </select>
             <input type="text" disabled placeholder="Bahria Town" />
-            <select
-              className="select_sector"
-              onChange={(e) => Setsector(e.target.value)}
-            >
-              <option value="" disabled selected>
-                Select Sector
-              </option>
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="C">C</option>
-            </select>
+           
           </div>
           <div>
             <select
               className="select_type"
-              onChange={(e) => Settype(e.target.value)}
+              onChange={(e) => props.Settype(e.target.value)}
             >
               <option value="" disabled selected>
                 Select Type
@@ -100,35 +107,31 @@ function SearchData() {
             </select>
             <select
               className="select_size"
-              onChange={(e) => Setsize(e.target.value)}
+              onChange={(e) => props.Setsize(e.target.value)}
             >
               <option value="" disabled selected>
                 Select Size
               </option>
               <option value="5 ">5 marla</option>
               <option value="10">10 marla</option>
-              <option value="15">15 marla</option>
-              <option value="1">1 kanal</option>
-              <option value="1.5">1.5 kanal</option>
             </select>
             <select
               className="select_price"
-              onChange={(e) => Setprice(e.target.value)}
+              onChange={(e) => props.Setprice(e.target.value)}
             >
-              <option value="" disabled selected>
-                Select Price
-              </option>
-              <option value="1,00,00,000">1,00,00,000</option>
-              <option value="2,00,00,000">2,00,00,000</option>
-              <option value="3,00,00,000">3,00,00,000</option>
-              <option value="4,00,00,000">4,00,00,000</option>
-              <option value="5,00,00,000">5,00,00,000</option>
-              <option value="6,00,00,000">6,00,00,000</option>
-              <option value="7,00,00,000">7,00,00,000</option>
-              <option value="8,00,00,000">8,00,00,000</option>
-              <option value="9,00,00,000">9,00,00,000</option>
-              <option value="10,00,00,000">10,00,00,000</option>
-            </select>
+            <option value="" disabled selected>
+            Select Price
+          </option>
+          <option value="Rs 2.8 Crore">Rs 2.8 Crore</option>
+          <option value="Rs 3 Crore">Rs 3 Crore</option>
+          <option value="Rs 2.5 Crore">Rs 2.5 Crore</option>
+          <option value="Rs 2 Crore">Rs 2 Crore</option>
+          <option value="Rs 6 Crore">Rs 6 Crore</option>
+          <option value="Rs 2.3 Crore">Rs 2.3 Crore</option>
+          <option value="Rs 2.2 Crore">Rs 2.2 Crore</option>
+          <option value="Rs 3.3 Crore">Rs 3.3 Crore</option>
+          <option value="Rs 2.2 Crore">Rs 2.2 Crore</option>
+        </select>
           </div>
           <a
             href={`/searchdata?city=${City}&sector=${Sector}&type=${Type}&size=${Size}&price=${Price}`}
@@ -138,11 +141,26 @@ function SearchData() {
         </form>
       </div>
       <div className="SearchDataContainer_box1">
-        <SearchDataContent />
-        <SearchDataContent />
-        <SearchDataContent />
+      {
+        Properties.map((property)=>(
+            property.City === props.City&& property.Type === props.Type &&
+            <SearchDataContent 
+              property = {property}
+              setSelectedProperty = {props.setSelectedProperty}
+              Image = {property.image}
+              City={property.City}
+              Address = {property.Address}
+              Area= {property.Area}
+              Type={property.Type}
+              Size = {property.land_size}
+              Bedrooms = {property.Bedrooms}
+              Baths = {property.Baths}
+              Price = {property.Price}
+            />
+        ))
+      }
 
-    
+
       </div>
       <Footer />
     </div>

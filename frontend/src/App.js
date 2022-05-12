@@ -8,7 +8,7 @@ import "./firebase/firebase";
 import Home from "./Components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Map from "./Components/Map";
-import logo from './images/Subtract.png';
+import logo from "./images/Subtract.png";
 import Area_guide from "./Components/Area_guide";
 import MapData from "./Components/MapData";
 import Area_details from "./Components/Area_details";
@@ -18,13 +18,28 @@ import AboutUs from "./Components/AboutUs";
 import Footer from "./Components/Footer";
 import Modal from "./Components/Modal";
 import Logo from "./Components/Logo";
+import { useState } from "react";
+
 function App() {
+  const [City, Setcity] = useState("");
+  const [Sector, Setsector] = useState("");
+  const [Type, Settype] = useState("");
+  const [Size, Setsize] = useState("");
+  const [Price, Setprice] = useState("");
+  const [SelectedProprty,setSelectedProperty] = useState();
+
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route exact path="/">
-            <Home/>
+            <Home
+              Setsector={Setsector}
+              Setcity={Setcity}
+              Settype={Settype}
+              Setsize={Setsize}
+              Setprice={Setprice}
+            />
           </Route>
           <Route exact path="/SignInform">
             <SignInform />
@@ -48,17 +63,27 @@ function App() {
           <Route path="/areaguides">
             <Area_guide />
           </Route>
-          <Route path='/area_detail'>
-            <Area_details/>
+          <Route path="/area_detail">
+            <Area_details />
           </Route>
           <Route path="/mapdata">
-            <MapData/>
+            <MapData SelectedProprty = {SelectedProprty}/>
           </Route>
           <Route path="/aboutus">
-            <AboutUs/>
+            <AboutUs />
           </Route>
           <Route path="/searchdata">
-            <SearchData/>
+            <SearchData
+              setSelectedProperty = {setSelectedProperty}
+              Setcity={Setcity}
+              City={City}
+              Settype={Settype}
+              Type={Type}
+              Setsize ={Setsize}
+              Size = {Size}
+              Setprice = {Setprice}
+              Price = {Price}
+            />
           </Route>
         </Switch>
       </Router>

@@ -1,27 +1,47 @@
 const mongoose = require('mongoose');
-const bycrypt = require('bcryptjs');
-const newAdmin = new mongoose.Schema({
-    Fname:{
+const newProperty = new mongoose.Schema({
+    Type:{
         type:String
     },
-    Lname:{
+    House_Number:{
+        type:Number
+    },
+    land_size:{
         type:String
     },
-    Gender:{
+    Bedrooms:{
+        type:Number
+    },
+    Baths:{
+        type:Number
+    },
+    Address:{
         type:String
     },
-    Email:{
+    Area:{
         type:String
     },
-    Password:{
+    Sector:{
         type:String
     },
-    Cnic:{
+    Price:{
         type:String
     },
-    Contact:{
+    Date:{
         type:String
-    }
+    },
+    Image:{
+        type:String
+    },
+    Icon:{
+        type:String
+    },
+    Icon1:{
+        type:String
+    },
+    City:{
+        type:String
+    },
 })
 
-module.exports = mongoose.model('admins',newAdmin);
+module.exports = mongoose.model('properties',newProperty);

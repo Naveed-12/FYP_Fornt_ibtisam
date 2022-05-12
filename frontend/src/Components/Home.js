@@ -9,12 +9,9 @@ import Homebanner1 from "./Homebanner1";
 import Homebanner2 from "./Homebanner2";
 import Homebanner3 from "./Homebanner3";
 import Footer1 from "./Footer1";
-function Home() {
-  const [City, Setcity] = useState();
-  const [Sector, Setsector] = useState();
-  const [Type, Settype] = useState();
-  const [Size, Setsize] = useState();
-  const [Price, Setprice] = useState();
+
+
+function Home(props) {
   return (
     <React.Fragment>
       <Navbar />
@@ -47,10 +44,22 @@ function Home() {
       ></div>
 
       <div className="home_search_container flex flex-col items-center justify-center">
-        <h1 style={{fontFamily:'Inter, sans-serif',fontSize:'40px',color:'#d8f1a0'}} className='font-semibold'>Search Your Future Property</h1>
+        <h1
+          style={{
+            fontFamily: "Inter, sans-serif",
+            fontSize: "40px",
+            color: "#d8f1a0",
+          }}
+          className="font-semibold"
+        >
+          Search Your Future Property
+        </h1>
         <form className="homeSearch_form w-3/5 mx-auto  mt-12  flex flex-col justify-center items-center space-y-3">
           <div className="flex justify-around w-full">
-            <select className="w-2/5 rounded h-10 p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer">
+            <select
+              onChange={(e) => props.Settype(e.target.value)}
+              className="w-2/5 rounded h-10 p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer"
+            >
               <option disabled selected>
                 Select Type
               </option>
@@ -58,7 +67,10 @@ function Home() {
               <option>House</option>
               <option>Plot</option>
             </select>
-            <select className="w-2/5 h-10 rounded p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer">
+            <select
+              onChange={(e) => props.Setcity(e.target.value)}
+              className="w-2/5 h-10 rounded p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer"
+            >
               <option disabled selected>
                 Select City
               </option>
@@ -69,15 +81,15 @@ function Home() {
           </div>
 
           <div className="flex justify-around w-full">
-            <select className="w-2/5 h-10 rounded p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer">
+            <select
+              onChange={(e) => props.Setsize(e.target.value)}
+              className="w-2/5 h-10 rounded p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer"
+            >
               <option value="" disabled selected>
                 Select Size
               </option>
-              <option value="5 ">5 marla</option>
-              <option value="10">10 marla</option>
-              <option value="15">15 marla</option>
-              <option value="1">1 kanal</option>
-              <option value="1.5">1.5 kanal</option>
+              <option value="5 marla">5 marla</option>
+              <option value="10 marla">10 marla</option>
             </select>
             <input
               type="text"
@@ -85,36 +97,35 @@ function Home() {
               className="w-2/5 rounded p-1 focus:border-2 h-10 focus:border-slate-500 hover:cursor-pointer"
             />
           </div>
-          <select className="select_price rounded p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer h-10">
+          <select
+            onChange={(e) => props.Setprice(e.target.value)}
+            className="select_price rounded p-1 focus:border-2 focus:border-slate-500 hover:cursor-pointer h-10"
+          >
             <option value="" disabled selected>
               Select Price
             </option>
-            <option value="1,00,00,000">1,00,00,000</option>
-            <option value="2,00,00,000">2,00,00,000</option>
-            <option value="3,00,00,000">3,00,00,000</option>
-            <option value="4,00,00,000">4,00,00,000</option>
-            <option value="5,00,00,000">5,00,00,000</option>
-            <option value="6,00,00,000">6,00,00,000</option>
-            <option value="7,00,00,000">7,00,00,000</option>
-            <option value="8,00,00,000">8,00,00,000</option>
-            <option value="9,00,00,000">9,00,00,000</option>
-            <option value="10,00,00,000">10,00,00,000</option>
+            <option value="Rs 2.8 Crore">Rs 2.8 Crore</option>
+            <option value="Rs 3 Crore">Rs 3 Crore</option>
+            <option value="Rs 2.5 Crore">Rs 2.5 Crore</option>
+            <option value="Rs 2 Crore">Rs 2 Crore</option>
+            <option value="Rs 6 Crore">Rs 6 Crore</option>
+            <option value="Rs 2.3 Crore">Rs 2.3 Crore</option>
+            <option value="Rs 2.2 Crore">Rs 2.2 Crore</option>
+            <option value="Rs 3.3 Crore">Rs 3.3 Crore</option>
+            <option value="Rs 2.2 Crore">Rs 2.2 Crore</option>
           </select>
-          <button className="border-2 home_search_button font-semibold border-slate-400 w-1/3 hover:border-[#D8F1A0] duration-300">
+          <Link to = "/searchdata">
+          <button className="border-2 btnhover" style={{paddingLeft:"100px", paddingRight:"100px"}}
+          >
             {" "}
-            <a
-              className="Findbtn"
-              href={`/searchdata?city=${City}&sector=${Sector}&type=${Type}&size=${Size}&price=${Price}`}
-              style={{fontFamily:'Inter, sans-serif'}}
-            >
-              Search
-            </a>
-          </button>
+             Search
+           
+          </button></Link>
         </form>
       </div>
-      <Homebanner1/>
-      <Homebanner2/>
-      <Homebanner3/>
+      <Homebanner1 />
+      <Homebanner2 />
+      <Homebanner3 />
       <Footer1 />
       {/* <Footer /> */}
     </React.Fragment>

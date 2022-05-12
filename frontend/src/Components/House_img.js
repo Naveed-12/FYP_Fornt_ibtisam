@@ -1,8 +1,8 @@
 import house from '../images/dha-city.png'
-function House_img() {
+function House_img(props) {
     return (
         <div className="house_img">
-            <img src={house} alt="house img"/>
+            <img src={props.SelectedProprty.image} alt="house img"/>
         </div>
     )
 }
