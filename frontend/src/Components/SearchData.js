@@ -130,7 +130,6 @@ function SearchData(props) {
           <option value="Rs 2.3 Crore">Rs 2.3 Crore</option>
           <option value="Rs 2.2 Crore">Rs 2.2 Crore</option>
           <option value="Rs 3.3 Crore">Rs 3.3 Crore</option>
-          <option value="Rs 2.2 Crore">Rs 2.2 Crore</option>
         </select>
           </div>
           <a
